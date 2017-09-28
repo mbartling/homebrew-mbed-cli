@@ -6,9 +6,9 @@ class MbedCli < Formula
 
   depends_on "git"
   depends_on "hg"
-  depends_on "caskroom/cask/gcc-arm-embedded"
 
   def install
+    system "/usr/local/bin/brew", "cask", "install", "gcc-arm-embedded"
     system "python", "setup", "install"
   end
 
