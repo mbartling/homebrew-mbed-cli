@@ -11,7 +11,7 @@ jobs:
             - checkout
             - run:
                 name: Install System Dependencies
-                command:  apt-get update -qq &&  apt-get install -y python python-pip wget
+                command:  apt-get update -qq &&  apt-get install -y python python-pip wget git
             - run:
                 name: Install dependecies
                 command: pip install nose requests
@@ -21,6 +21,10 @@ jobs:
             - run:
                 name: Commit changes
                 command: |
+                    git config --global user.email michael.bartling@arm.com
+                    git config --global user.name Michael Bartling
+                    mkdir -p ~/.ssh
+                    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
                     git add mbed-cli.rb
                     git commit -m "Updated release"
                     git push origin master
