@@ -13,6 +13,9 @@ machine:
                               name: Install System Dependencies
                               command: sudo apt-get update -qq && sudo apt-get install -y python python-pip
                           - run:
+                              name: Install dependecies
+                              command: pip install nose requests
+                          - run:
                               name: Run update test
                               command: nosetests 
                           - run:
