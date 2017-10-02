@@ -14,7 +14,7 @@ machine:
                               command: sudo apt-get update -qq && sudo apt-get install -y python python-pip
                           - run:
                               name: Run update test
-                              command: python check-update.py
+                              command: nosetests 
                           - run:
                               name: Commit changes
                               command: |
