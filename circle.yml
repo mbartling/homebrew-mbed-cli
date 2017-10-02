@@ -1,0 +1,23 @@
+machine:
+    environment:
+        ROOT_DIR: /tmp/mbed-greenlight
+
+        version: 2
+        jobs:
+            build:
+                docker:
+                    - image: ubuntu
+                      steps:
+                          - checkout
+                          - run:
+                              name: Install System Dependencies
+                              command: sudo apt-get update -qq && sudo apt-get install -y python python-pip
+                          - run:
+                              name: Run update test
+                              command: python check-update.py
+                          - run:
+                              name: Commit changes
+                              command: |
+                                  git add mbed-cli.rb
+                                  git commit -m "Updated release"
+                                  git push origin master
