@@ -35,6 +35,7 @@ class TestNewRelease(object):
         # Get the latest info
         r = requests.get("https://api.github.com/repos/armmbed/mbed-cli/releases/latest")
         latestJson = json.loads(r.content)
+        print latestJson 
         latestVersion = latestJson['tag_name']
     
         # Fail if no new releasee

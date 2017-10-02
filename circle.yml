@@ -11,13 +11,13 @@ jobs:
             - checkout
             - run:
                 name: Install System Dependencies
-                command:  apt-get update -qq &&  apt-get install -y python python-pip
+                command:  apt-get update -qq &&  apt-get install -y python python-pip wget
             - run:
                 name: Install dependecies
                 command: pip install nose requests
             - run:
                 name: Run update test
-                command: nosetests 
+                command: nosetests -s
             - run:
                 name: Commit changes
                 command: |
