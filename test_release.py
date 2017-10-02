@@ -43,9 +43,13 @@ class TestNewRelease(object):
         subprocess.call("wget %s%s.tar.gz" % (tarbalURL, latestVersion), shell=True)
         with open('%s.tar.gz' % latestVersion, 'rb') as fp:
             latestHash = hashlib.sha256(fp.read()).hexdigest()
+        print latestHash
     
         # Update the file
         fileTxt = re.sub(currentRelease, latestVersion, fileTxt)
         fileTxt = re.sub(currentHash, latestHash, fileTxt)
+        
         with open('mbed-cli.rb', 'w') as fp:
             fp.write(fileTxt)
+
+        print fileTxt
