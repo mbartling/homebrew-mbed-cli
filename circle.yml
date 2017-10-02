@@ -8,10 +8,10 @@ jobs:
         docker:
             - image: ubuntu
         steps:
-            - checkout
             - run:
                 name: Install System Dependencies
                 command:  apt-get update -qq &&  apt-get install -y python python-pip wget git
+            - checkout
             - run:
                 name: Install dependecies
                 command: pip install nose requests
@@ -27,4 +27,4 @@ jobs:
                     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
                     git add mbed-cli.rb
                     git commit -m "Updated release"
-                    git push origin master
+                    git push
