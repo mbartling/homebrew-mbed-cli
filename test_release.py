@@ -53,4 +53,8 @@ class TestNewRelease(object):
         with open('mbed-cli.rb', 'w') as fp:
             fp.write(fileTxt)
 
+        # Write out the versions
+        with open('Formula/mbed-cli@%s.rb' % latestVersion, 'w') as fp:
+            fp.write(fileTxt)
+
         print fileTxt
