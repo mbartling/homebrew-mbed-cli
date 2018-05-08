@@ -54,6 +54,8 @@ class TestNewRelease(object):
             fp.write(fileTxt)
 
         # Write out the versions
+        vs = "".join(latestVersion.split('.'))
+        fileTxt = re.sub("MbedCli", "MbedCliAT%s" % vs, fileTxt)
         with open('Formula/mbed-cli@%s.rb' % latestVersion, 'w') as fp:
             fp.write(fileTxt)
 
