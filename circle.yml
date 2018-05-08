@@ -25,6 +25,6 @@ jobs:
                     git config --global user.name Michael Bartling
                     mkdir -p ~/.ssh
                     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-                    git add mbed-cli.rb
+                    git add Formula
                     git commit -m "Updated release"
                     git push

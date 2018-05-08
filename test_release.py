@@ -17,7 +17,7 @@ class TestNewRelease(object):
 
     def test_new_release(self):
         # Check if there is a newer release
-        with open('mbed-cli.rb') as fp:
+        with open('Formula/mbed-cli.rb') as fp:
             fileTxt = fp.read()
     
         currentRelease = ''
@@ -50,7 +50,7 @@ class TestNewRelease(object):
         fileTxt = re.sub(currentRelease, latestVersion, fileTxt)
         fileTxt = re.sub(currentHash, latestHash, fileTxt)
         
-        with open('mbed-cli.rb', 'w') as fp:
+        with open('Formula/mbed-cli.rb', 'w') as fp:
             fp.write(fileTxt)
 
         # Write out the versions
