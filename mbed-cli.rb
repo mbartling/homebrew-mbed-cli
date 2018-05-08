@@ -1,8 +1,8 @@
 class MbedCli < Formula
   desc "ARM mbed Command Line Interface"
   homepage "https://developer.mbed.org"
-  url "https://github.com/ARMmbed/mbed-cli/archive/1.2.2.tar.gz"
-  sha256 "bedd9742a99c355eb2e30283eaf28d05ff610083dc5f9506a9216006e70d2ac6"
+  url "https://github.com/ARMmbed/mbed-cli/archive/1.5.1.tar.gz"
+  sha256 "5048535a4db03f7591b1ce808213248768df9c3f16ace53b7a24656c89bbbf64"
 
   depends_on :hg
   system "/usr/local/bin/brew", "cask", "install", "gcc-arm-embedded"
