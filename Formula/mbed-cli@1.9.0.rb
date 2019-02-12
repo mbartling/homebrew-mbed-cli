@@ -1,4 +1,4 @@
-class MbedCli < Formula
+class MbedCliAT190 < Formula
   desc "ARM mbed Command Line Interface"
   homepage "https://developer.mbed.org"
   url "https://github.com/ARMmbed/mbed-cli/archive/1.9.0.tar.gz"
